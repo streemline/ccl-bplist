@@ -25,6 +25,7 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 """
 
+
 # This example parses the "IconState.plist" file from an iOS device detailing
 # the apps displayed on the Springboard homescreen.
 
@@ -63,15 +64,15 @@ for screen in screens:
             # contains 2 keys:
             # "displayName": the name of the folder
             # "iconLists": an array of arrays - just as we've already seen
-            
+
             # We can get the folder name directly:
             folder_name = homescreen_element["displayName"]
-            print("Folder: " + folder_name)
+            print(f"Folder: {folder_name}")
 
             # And then iterate through the array of arrays under the 
             # "iconLists" key.
             folder_screens = homescreen_element["iconLists"]
-            
+
             for folder_screen in folder_screens:
                 for folder_element in folder_screen:
                     print("+\t" + folder_element)
